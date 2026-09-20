@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover">
+
+<title>Market Pulse</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    min-height:100%;
+}
+
+body{
+    min-height:100dvh;
+    background:#050807;
+    color:#f5fff9;
+    font-family:Inter,Arial,sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow-x:hidden;
+}
+
+body:before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+        linear-gradient(rgba(47,255,148,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(47,255,148,.025) 1px,transparent 1px);
+    background-size:34px 34px;
+    pointer-events:none;
+}
+
+.glow{
+    position:fixed;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    background:#00ff88;
+    filter:blur(130px);
+    opacity:.07;
+    top:-100px;
+    right:-100px;
+}
+
+.wrapper{
+    width:100%;
+    max-width:560px;
+    padding:20px;
+    position:relative;
+    z-index:2;
+}
+
+.card{
+    background:rgba(7,15,11,.94);
+    border:1px solid rgba(55,255,153,.2);
+    border-radius:28px;
+    overflow:hidden;
+    box-shadow:0 30px 100px rgba(0,0,0,.65);
+    animation:enter .7s ease;
+}
+
+@keyframes enter{
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:17px 18px;
+    border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.brand{
+    font-family:monospace;
+    font-size:11px;
+    color:#51f5a1;
+    letter-spacing:1.5px;
+}
+
+.status{
+    font-size:9px;
+    color:#5e796b;
+    margin-top:5px;
+}
+
+.logo{
+    width:65px;
+    height:65px;
+    border-radius:18px;
+    object-fit:cover;
+    border:1px solid rgba(82,255,164,.25);
+}
+
+.content{
+    padding:32px 23px 26px;
+}
+
+.eyebrow{
+    color:#52ef9b;
+    font-size:10px;
+    font-weight:800;
+    letter-spacing:2px;
+    margin-bottom:14px;
+}
+
+h1{
+    font-size:42px;
+    line-height:.98;
+    letter-spacing:-2px;
+    margin-bottom:18px;
+}
+
+h1 span{
+    color:#58efa0;
+}
+
+.desc{
+    color:#81958a;
+    font-size:14px;
+    line-height:1.75;
+    margin-bottom:25px;
+}
+
+.market{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:9px;
+    margin-bottom:22px;
+}
+
+.item{
+    padding:15px;
+    background:#09140f;
+    border:1px solid #14291e;
+    border-radius:14px;
+}
+
+.item small{
+    display:block;
+    color:#52665a;
+    font-size:9px;
+    margin-bottom:6px;
+}
+
+.item strong{
+    font-size:12px;
+    color:#c9e9d8;
+}
+
+.item .green{
+    color:#51ed9a;
+}
+
+.join{
+    width:100%;
+    display:block;
+    text-align:center;
+    padding:18px;
+    border-radius:15px;
+    background:#50ee9b;
+    color:#031008;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:900;
+    transition:.25s;
+}
+
+.join:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 40px rgba(80,238,155,.2);
+}
+
+.note{
+    text-align:center;
+    color:#4c5b52;
+    font-size:9px;
+    margin-top:13px;
+}
+
+.agency{
+    position:fixed;
+    left:0;
+    bottom:max(9px,env(safe-area-inset-bottom));
+    width:100%;
+    text-align:center;
+    color:#445048;
+    font-size:10px;
+    z-index:5;
+}
+
+.agency a{
+    color:#708078;
+    text-decoration:none;
+}
+
+@media(max-width:420px){
+
+    .content{
+        padding:28px 18px 23px;
+    }
+
+    h1{
+        font-size:34px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+<div class="glow"></div>
+
+<div class="wrapper">
+
+<div class="card">
+
+<div class="header">
+
+<div>
+<div class="brand">MARKET_PULSE</div>
+<div class="status">COMMUNITY ACCESS</div>
+</div>
+
+<img src="logo.png" class="logo" alt="Community Logo">
+
+</div>
+
+<div class="content">
+
+<div class="eyebrow">MARKET COMMUNITY</div>
+
+<h1>
+Read the market.<br>
+<span>Stay connected.</span>
+</h1>
+
+<p class="desc">
+Join the Telegram community for market discussions,
+educational insights and regular market-related updates.
+</p>
+
+<div class="market">
+
+<div class="item">
+<small>COMMUNITY</small>
+<strong>TELEGRAM</strong>
+</div>
+
+<div class="item">
+<small>CONTENT</small>
+<strong>MARKET INSIGHTS</strong>
+</div>
+
+<div class="item">
+<small>FORMAT</small>
+<strong>EDUCATIONAL</strong>
+</div>
+
+<div class="item">
+<small>ACCESS</small>
+<strong class="green">OPEN</strong>
+</div>
+
+</div>
+
+<a
+id="telegramButton"
+class="join"
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+>
+OPEN TELEGRAM →
+</a>
+
+<div class="note">
+Educational information only. Markets involve risk.
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="agency">
+Ads managed by
+<a
+id="agencyLink"
+href="#"
+target="_blank"
+rel="noopener noreferrer"
+>
+Snow Ads Agency
+</a>
+</div>
+
+
+<script>
+
+/* =====================================
+   CLIENT SETTINGS
+===================================== */
+
+const META_PIXEL_ID = "YOUR_PIXEL_ID";
+
+const TELEGRAM_LINK =
+"https://t.me/YOUR_CLIENT_TELEGRAM";
+
+const AGENCY_LINK =
+"https://YOUR-SNOW-AGENCY-LINK.com";
+
+
+/* =====================================
+   LINK SETUP
+===================================== */
+
+document.getElementById("telegramButton").href =
+TELEGRAM_LINK;
+
+document.getElementById("agencyLink").href =
+AGENCY_LINK;
+
+
+/* =====================================
+   META PIXEL
+===================================== */
+
+if(
+    META_PIXEL_ID &&
+    META_PIXEL_ID !== "YOUR_PIXEL_ID"
+){
+
+    !function(f,b,e,v,n,t,s)
+    {
+        if(f.fbq)return;
+
+        n=f.fbq=function(){
+            n.callMethod ?
+            n.callMethod.apply(n,arguments) :
+            n.queue.push(arguments)
+        };
+
+        if(!f._fbq)f._fbq=n;
+
+        n.push=n;
+        n.loaded=!0;
+        n.version="2.0";
+        n.queue=[];
+
+        t=b.createElement(e);
+        t.async=!0;
+        t.src=v;
+
+        s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s);
+
+    }(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+    );
+
+    fbq("init",META_PIXEL_ID);
+
+    fbq("track","PageView");
+}
+
+
+/* =====================================
+   TELEGRAM CLICK EVENT
+===================================== */
+
+document
+.getElementById("telegramButton")
+.addEventListener("click",function(){
+
+    if(typeof fbq === "function"){
+
+        fbq(
+            "trackCustom",
+            "TelegramJoinClick"
+        );
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
